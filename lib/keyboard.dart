@@ -1,5 +1,5 @@
 import 'package:bonfire/bonfire.dart';
-import 'package:desafio_escribo_pacman_game/main.dart';
+import 'package:desafio_escribo_pacman_game/pacman.dart';
 import 'package:flutter/material.dart';
 
 class Keyboard extends StatefulWidget {
@@ -13,20 +13,18 @@ class _KeyboardState extends State<Keyboard> {
   @override
   Widget build(BuildContext context) {
     return BonfireTiledWidget(
-      map: TiledWorldMap('map/map_packman.json',
-          forceTileSize: const Size(tileSize, tileSize)),
-      joystick: Joystick(
-        keyboardConfig: KeyboardConfig(
-          keyboardDirectionalType: KeyboardDirectionalType.arrows,
-        ),
-        actions: [
-          JoystickAction(
-            actionId: 1,
-            color: Colors.orange,
-            margin: const EdgeInsets.all(40),
-          ),
-        ],
+      map: TiledWorldMap(
+        'map/map_packman.json',
+        forceTileSize: const Size(15, 15),
       ),
+      joystick: Joystick(
+        keyboardConfig: KeyboardConfig(),
+        directional: JoystickDirectional(
+          size: 120,
+          //isFixed: false,
+        ),
+      ),
+      player: PacMan(Vector2(30, 30)),
     );
   }
 }

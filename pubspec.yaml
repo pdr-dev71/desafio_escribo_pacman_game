@@ -56,10 +56,7 @@ flutter:
 
   assets:
     # enemies
-    - assets/images/enemies/blue_ghost.png
-    - assets/images/enemies/pink_ghost.png
-    - assets/images/enemies/red_ghost.png
-    - assets/images/enemies/yellow_ghost.png
+    - assets/images/enemies/
 
     # person
     - assets/images/pacman/pacman.png
